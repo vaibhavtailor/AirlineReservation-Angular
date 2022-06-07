@@ -1,5 +1,18 @@
-<h2>{{reservation.name | uppercase}} Details</h2>
-<div>
-    <label for="name">Reservation name: </label>
-    <input id="name" [(ngModel)]="reservation.name" placeholder="name">
+<h2>Airline Reservations</h2>
+<ul class="reservations">
+  <li *ngFor="let reservation of reservations">
+    <button [class.selected]="reservation === selectedReservation" type="button" (click)="onSelect(reservation)">
+      <span class="badge">{{reservation.id}}</span>
+      <span class="name">{{reservation.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedReservation">
+  <h2>{{selectedReservation.name | uppercase}} Details</h2>
+  <div>id: {{selectedReservation.id}}</div>
+  <div>
+    <label for="reservation-name">Reservation name: </label>
+    <input id="reservation-name" [(ngModel)]="selectedReservation.name" placeholder="name">
+  </div>
 </div>
