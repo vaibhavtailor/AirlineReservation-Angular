@@ -1,0 +1,12 @@
+<div *ngIf="reservation">
+
+    <h2>{{reservation.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{reservation.id}}</div>
+    <div>
+      <label for="reservation-name">Reservation name: </label>
+      <input id="reservation-name" [(ngModel)]="reservation.name" placeholder="name">
+    </div>
+  
+</div>
+
+

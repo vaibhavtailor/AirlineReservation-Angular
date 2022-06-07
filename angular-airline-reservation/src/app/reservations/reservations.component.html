@@ -8,11 +8,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedReservation">
-  <h2>{{selectedReservation.name | uppercase}} Details</h2>
-  <div>id: {{selectedReservation.id}}</div>
-  <div>
-    <label for="reservation-name">Reservation name: </label>
-    <input id="reservation-name" [(ngModel)]="selectedReservation.name" placeholder="name">
-  </div>
-</div>
+<app-reservation-detail [reservation]="selectedReservation"></app-reservation-detail>
