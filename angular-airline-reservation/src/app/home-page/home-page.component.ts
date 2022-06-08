@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Reservation } from '../reservation';
-
 import { ReservationService } from '../reservation.service';
 
 @Component({
-  selector: 'app-reservations',
-  templateUrl: './reservations.component.html',
-  styleUrls: ['./reservations.component.css']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.css']
 })
-export class ReservationsComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 
   reservations: Reservation[] = [];
 
@@ -20,7 +19,7 @@ export class ReservationsComponent implements OnInit {
   }
 
   getReservations(): void {
-    this.reservationService.getReservations().subscribe(reservations => this.reservations = reservations);
+    this.reservationService.getReservations().subscribe(reservations => this.reservations = reservations.slice(1,5));
   }
 
 }

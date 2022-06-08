@@ -18,5 +18,11 @@ export class ReservationService {
     return reservations;
   }
 
+  getReservation(id: number): Observable<Reservation> {
+    const reservation = Reservations.find(r => r.id === id)!;
+    this.messageService.add(`ReservationService: fetched hero id=${id}`);
+    return of(reservation);
+  }
+
   constructor(private messageService: MessageService) { }
 }

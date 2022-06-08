@@ -1,11 +1,9 @@
 <h2>Airline Reservations</h2>
 <ul class="reservations">
   <li *ngFor="let reservation of reservations">
-    <button [class.selected]="reservation === selectedReservation" type="button" (click)="onSelect(reservation)">
-      <span class="badge">{{reservation.id}}</span>
-      <span class="name">{{reservation.name}}</span>
-    </button>
+    <a routerLink = "/detail/{{reservation.id}}">
+      <span class="badge">{{reservation.id}}</span> {{reservation.name}}
+    </a>
   </li>
 </ul>
 
-<app-reservation-detail [reservation]="selectedReservation"></app-reservation-detail>

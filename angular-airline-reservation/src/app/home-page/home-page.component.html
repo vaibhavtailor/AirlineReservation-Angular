@@ -1,0 +1,6 @@
+<h2>Reservations</h2>
+<div class="reservations-menu">
+  <a *ngFor="let reservation of reservations" routerLink = "/detail/{{reservation.id}}">
+    {{reservation.name}}
+  </a>
+</div>

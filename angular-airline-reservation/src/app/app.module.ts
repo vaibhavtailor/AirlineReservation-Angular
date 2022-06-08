@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { ReservationDetailComponent } from './reservation-detail/reservation-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReservationsComponent,
     ReservationDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
