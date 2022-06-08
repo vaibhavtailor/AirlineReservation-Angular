@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Reservation } from '../reservation';
 
-import { Reservations } from '../sample-reservations';
+import { ReservationService } from '../reservation.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-reservations',
@@ -10,15 +12,24 @@ import { Reservations } from '../sample-reservations';
 })
 export class ReservationsComponent implements OnInit {
   
-  reservations = Reservations;
+  
   selectedReservation?: Reservation;
-  constructor() { }
+
+  reservations: Reservation[] = [];
+
+  constructor(private reservationService: ReservationService, private messageService: MessageService) { }
 
   ngOnInit(): void {
+    this.getReservations();
   }
 
   onSelect(reservation: Reservation): void {
     this.selectedReservation = reservation;
+    this.messageService.add(`ReservationsComponent: Selected reservation id=${reservation.id}`);
+  }
+
+  getReservations(): void {
+    this.reservationService.getReservations().subscribe(reservations => this.reservations = reservations);
   }
 
 }
