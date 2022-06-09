@@ -1,4 +1,7 @@
 /* MessagesComponent's private CSS styles */
+html {
+  background: antiquewhite;
+}
 h2 {
     color: #004ea8;
     font-family: Arial, Helvetica, sans-serif;

@@ -1,17 +1,19 @@
 /* HomePageComponent's private CSS styles */
-
+html {
+  background: antiquewhite;
+}
 h2 {
-    text-align: center;
+    text-align: left ;
   }
   
-  .heroes-menu {
+  .reservations-menu {
     padding: 0;
     margin: auto;
     max-width: 1000px;
   
     /* flexbox */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: flex-start;
@@ -41,7 +43,7 @@ h2 {
   
   @media (min-width: 900px) {
     a {
-      width: 22.5%;
+      width: 18%;
       box-sizing: content-box;
     }
   }

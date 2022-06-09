@@ -1,13 +1,15 @@
-<div *ngIf="reservation">
+<!DOCTYPE html>
+<html>
+  <div *ngIf="reservation">
 
     <h2>{{reservation.name | uppercase}} Details</h2>
     <div><span>id: </span>{{reservation.id}}</div>
     <div>
       <label for="reservation-name">Reservation name: </label>
-      <input id="reservation-name" [(ngModel)]="reservation.name" placeholder="name">
+      <input id="reservation-name" [(ngModel)]="reservation.name" placeholder="Reservation name"/>
     </div>
-    <app-messages></app-messages>
-    <button type="button" (click)="return()">Return</button>
+    <button type="button" class="save" (click)="save()">save</button>
+    <button type="button" class="delete" (click)="return()">Return</button>
 </div>
-
-
+<app-messages></app-messages>
+</html>

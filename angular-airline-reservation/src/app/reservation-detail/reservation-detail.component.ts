@@ -25,12 +25,18 @@ export class ReservationDetailComponent implements OnInit {
   }
 
   getReservation(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.reservationService.getReservation(id).subscribe(reservation => this.reservation = reservation);
   }
 
   return(): void {
     this.location.back();
+  }
+
+  save(): void {
+    if (this.reservation) {
+      this.reservationService.updateReservation(this.reservation).subscribe(() => this.return());
+    }
   }
 
 }

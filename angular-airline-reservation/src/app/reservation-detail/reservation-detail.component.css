@@ -1,4 +1,7 @@
-/* HeroDetailComponent's private CSS styles */
+/* reservationDetailComponent's private CSS styles */
+html {
+  background: antiquewhite;
+}
 label {
     color: #4c3d95;
     font-weight: bold;
@@ -14,7 +17,10 @@ label {
     border-radius: 4px;
     font-size: 1rem;
   }
-  button:hover {
+  .save:hover {
+    background-color: #0025f9;
+  }
+  .delete:hover {
     background-color: #e53c3c;
   }
   button:disabled {

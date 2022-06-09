@@ -23,4 +23,18 @@ export class ReservationsComponent implements OnInit {
     this.reservationService.getReservations().subscribe(reservations => this.reservations = reservations);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.reservationService.addReservation({ name } as Reservation)
+      .subscribe(reservation => {
+        this.reservations.push(reservation);
+      });
+  }
+
+  delete(reservation: Reservation): void {
+    this.reservations = this.reservations.filter(r => r !== reservation);
+    this.reservationService.deleteReservation(reservation.id).subscribe();
+  }
+
 }

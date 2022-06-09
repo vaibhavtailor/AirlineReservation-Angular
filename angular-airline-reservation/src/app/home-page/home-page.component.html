@@ -1,6 +1,11 @@
-<h2>Reservations</h2>
+<!DOCTYPE html>
+<html>
+<h2 class="title">Recent reservations: </h2>
 <div class="reservations-menu">
   <a *ngFor="let reservation of reservations" routerLink = "/detail/{{reservation.id}}">
     {{reservation.name}}
   </a>
 </div>
+
+<app-reservation-search></app-reservation-search>
+</html>

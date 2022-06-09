@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { AppRoutingModule } from './app-routing.module';
+
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { ReservationDetailComponent } from './reservation-detail/reservation-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ReservationSearchComponent } from './reservation-search/reservation-search.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +20,17 @@ import { HomePageComponent } from './home-page/home-page.component';
     ReservationsComponent,
     ReservationDetailComponent,
     MessagesComponent,
-    HomePageComponent
+    HomePageComponent,
+    ReservationSearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
